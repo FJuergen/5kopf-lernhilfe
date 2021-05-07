@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 /*
- * Startbildschirm
- * Darstellung des Avatars, der XP und der aktuellen Lernziele
+ * Shop interface um Avatar Optionen zu kaufen
  */
-public class MainActivity extends AppCompatActivity {
+
+public class AvatarShop extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_avatar_shop);
     }
 }

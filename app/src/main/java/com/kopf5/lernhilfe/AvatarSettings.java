@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 /*
- * Startbildschirm
- * Darstellung des Avatars, der XP und der aktuellen Lernziele
+ * Customization für den Avatar
  */
-public class MainActivity extends AppCompatActivity {
+
+public class AvatarSettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_avatar_settings);
     }
 }
