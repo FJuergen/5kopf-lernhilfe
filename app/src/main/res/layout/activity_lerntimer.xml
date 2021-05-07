@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Lerntimer">
 
+    <TextView
+        android:id="@+id/clock"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textColor="@color/white"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/clockStart"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:onClick="startTimer"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clock" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
