@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">lernhilfe</string>
+    <string name="cancel">Cancel</string>
     <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="dialog_title">Set timer</string>
+    <string name="new_timer">New Timer</string>
 </resources>
