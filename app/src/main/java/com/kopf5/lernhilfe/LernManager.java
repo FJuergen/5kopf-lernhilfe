@@ -17,6 +17,7 @@ public class LernManager {
     public IsRunning isRunning = RUNNING;
 
     long pausedTimerTime = 0;
+    long xpCounter;
 
 
     public LernManager(Lerntimer parentActivity){
@@ -40,13 +41,21 @@ public class LernManager {
     }
 
     public void startTimer(long length){
+        xpCounter =0;
         if(timer==null) {
             timer = new CountDownTimer(length, 100) {
 
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    parent.updateTimerText(millisUntilFinished/60000 + " : " +  String.format("%02d",(millisUntilFinished/1000)%60));
+                    parent.updateTimerText(millisUntilFinished/60000 + " : " +  String.format("%02d",(millisUntilFinished/1000)%60),100);
                     pausedTimerTime = millisUntilFinished;
+
+                    xpCounter+=100;
+                    if(xpCounter>6000){
+                        UserManager.manager.addXp(10);
+                        xpCounter=0;
+                    }
+
                 }
 
                 @Override

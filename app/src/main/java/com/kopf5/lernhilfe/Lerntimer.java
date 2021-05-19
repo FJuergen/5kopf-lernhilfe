@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /*
  * Einstellungen und Interface für den Lerntimer
  */
@@ -16,6 +19,7 @@ import android.widget.TextView;
 public class Lerntimer extends AppCompatActivity {
 
     TextView clock;
+    TextView level;
     LernManager manager = new LernManager(this);
     NumberPicker picker;
     AlertDialog dialog;
@@ -41,12 +45,20 @@ public class Lerntimer extends AppCompatActivity {
         dialog = builder.create();
         setContentView(R.layout.activity_lerntimer);
         clock = findViewById(R.id.clock);
+        level = findViewById(R.id.level);
+
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                level.setText(String.format("Level : %d", UserManager.manager.getLevel()));
+            }
+        },0,100);
+
     }
 
     public void reset(){
         findViewById(R.id.clock_pause).setVisibility(View.INVISIBLE);
         findViewById(R.id.clock_resume).setVisibility(View.INVISIBLE);
-
     }
 
     public void newTimer(View view){
@@ -58,7 +70,7 @@ public class Lerntimer extends AppCompatActivity {
         }
     }
 
-    public void updateTimerText(String timerText){
+    public void updateTimerText(String timerText,float deltaTime){
         clock.setText(timerText);
     }
 

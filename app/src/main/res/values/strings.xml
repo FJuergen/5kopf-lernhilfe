@@ -2,6 +2,7 @@
     <string name="app_name">lernhilfe</string>
     <string name="cancel">Cancel</string>
     <string name="start">Start</string>
+    <string name="level">Level : 0</string>
     <string name="pause">Pause</string>
     <string name="resume">Resume</string>
     <string name="dialog_title">Set timer</string>
