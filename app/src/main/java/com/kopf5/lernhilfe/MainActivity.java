@@ -19,4 +19,6 @@ public class MainActivity extends AppCompatActivity {
         Intent test = new Intent(this,Lerntimer.class);
         startActivity(test);
     }
+
+    // toolbar.xml steht (res/layout/toolbar.xml) - ist aber noch ohne Eventlistener.
 }

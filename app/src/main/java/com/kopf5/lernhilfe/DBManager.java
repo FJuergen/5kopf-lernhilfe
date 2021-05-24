@@ -5,4 +5,5 @@ package com.kopf5.lernhilfe;
  */
 
 public class DBManager {
+
 }
