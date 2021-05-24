@@ -15,4 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    // toolbar.xml steht (res/layout/toolbar.xml) - ist aber noch ohne Eventlistener.
 }
