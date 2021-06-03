@@ -5,59 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/holo_blue_light"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic__06_shop" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/holo_blue_light"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic__09_happy" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/holo_blue_light"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic__06_timer_1" />
-
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:background="@android:color/holo_blue_light"
-            android:padding="0dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic__01_clothes_hanger" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_navigation_menu">
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </LinearLayout>
 
