@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/shop"
+        android:id="@+id/navigation_shop"
+        android:enabled="true"
+        android:icon="@drawable/ic__06_shop"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="@string/happy"
+        android:id="@+id/navigation_happy"
+        android:enabled="true"
+        android:icon="@drawable/ic__09_happy"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="@string/timer"
+        android:id="@+id/navigation_timer"
+        android:enabled="true"
+        android:icon="@drawable/ic__06_timer_1"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:title="@string/clothes"
+        android:id="@+id/navigation_clothes"
+        android:enabled="true"
+        android:src="@drawable/ic__01_clothes_hanger"
+        app:showAsAction="ifRoom"/>
+
+</menu>
