@@ -9,9 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lernhilfe">
-        <activity android:name=".AvatarSettings" />
-        <activity android:name=".AvatarShop" />
-        <activity android:name=".Lerntimer" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
