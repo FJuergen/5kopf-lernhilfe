@@ -25,6 +25,8 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent i = new Intent(this,AvatarSettings.class);
+        startActivity(i);
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav_view);

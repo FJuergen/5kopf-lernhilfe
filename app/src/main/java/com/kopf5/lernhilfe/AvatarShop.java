@@ -3,6 +3,7 @@ package com.kopf5.lernhilfe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 /*
  * Shop interface um Avatar Optionen zu kaufen
