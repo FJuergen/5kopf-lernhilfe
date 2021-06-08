@@ -1,22 +1,14 @@
 package com.kopf5.lernhilfe;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 /*
  * Startbildschirm
  * Darstellung des Avatars, der XP und der aktuellen Lernziele

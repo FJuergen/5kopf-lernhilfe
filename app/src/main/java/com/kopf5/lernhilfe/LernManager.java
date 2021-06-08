@@ -1,7 +1,6 @@
 package com.kopf5.lernhilfe;
 
 import android.os.CountDownTimer;
-
 import java.util.Locale;
 
 import static com.kopf5.lernhilfe.IsRunning.*;
