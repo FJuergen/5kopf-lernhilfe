@@ -170,8 +170,5 @@ public class AvatarSettings extends Fragment {
         mySP = getActivity().getSharedPreferences("UserInfo",0);
         cw = new ContextWrapper(getActivity().getBaseContext());
         loadImageFromStorage(mySP.getString("selectedSkinPath",""));
-
-
-        return inflater.inflate(R.layout.activity_avatar_settings, container, false);
     }
 }
