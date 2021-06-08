@@ -18,6 +18,8 @@ import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 /*
  * Startbildschirm
  * Darstellung des Avatars, der XP und der aktuellen Lernziele

@@ -172,5 +172,6 @@ public class AvatarSettings extends Fragment {
         loadImageFromStorage(mySP.getString("selectedSkinPath",""));
 
 
+        return inflater.inflate(R.layout.activity_avatar_settings, container, false);
     }
 }
