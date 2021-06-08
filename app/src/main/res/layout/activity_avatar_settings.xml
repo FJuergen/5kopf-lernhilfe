@@ -68,7 +68,7 @@
                 android:layout_weight="1"
                 android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/btn_star_big_on" />
+                app:srcCompat="@drawable/skin3" />
 
             <ImageButton
                 android:id="@+id/imageButtonSkin4"
@@ -78,7 +78,7 @@
                 android:layout_weight="1"
                 android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic__09_happy" />
+                android:src="@drawable/skin4" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +95,7 @@
                 android:layout_weight="1"
                 android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/presence_video_online" />
+                app:srcCompat="@drawable/skin5" />
 
             <ImageButton
                 android:id="@+id/imageButtonSkin6"
@@ -105,7 +105,7 @@
                 android:layout_weight="1"
                 android:onClick="launchActivity2"
                 android:scaleType="fitCenter"
-                app:srcCompat="@android:drawable/stat_sys_phone_call_forward" />
+                app:srcCompat="@drawable/skin6" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
