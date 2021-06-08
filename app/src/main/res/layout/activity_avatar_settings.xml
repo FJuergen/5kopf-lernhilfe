@@ -39,9 +39,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/skin1" />
+                android:src="@drawable/skin1"
+                />
 
             <ImageButton
                 android:id="@+id/imageButtonSkin2"
@@ -49,9 +49,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/skin2" />
+                android:src="@drawable/skin2"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -66,9 +66,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/skin3" />
+                android:src="@drawable/skin3" />
 
             <ImageButton
                 android:id="@+id/imageButtonSkin4"
@@ -76,9 +75,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                android:src="@drawable/skin4" />
+                android:src="@drawable/skin4"/>
         </LinearLayout>
 
         <LinearLayout
@@ -93,9 +91,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:onClick="setPreview"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/skin5" />
+                android:src="@drawable/skin5" />
 
             <ImageButton
                 android:id="@+id/imageButtonSkin6"
@@ -103,9 +100,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:onClick="launchActivity2"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/skin6" />
+                android:src="@drawable/skin6" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
