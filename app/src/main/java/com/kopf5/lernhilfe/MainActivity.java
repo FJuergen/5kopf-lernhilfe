@@ -9,7 +9,14 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -54,7 +61,11 @@ public class MainActivity extends FragmentActivity {
                             System.out.println("shop");
                             break;
                         case R.id.navigation_clothes:
-                            System.out.println("clothes");
+                            selectedFragment = new AvatarSettings();
+                            getSupportFragmentManager().beginTransaction()
+                                    .setReorderingAllowed(true)
+                                    .replace(R.id.fragment_container,selectedFragment)
+                                    .commit();
                             break;
                     }
                     return true;
