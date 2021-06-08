@@ -3,12 +3,8 @@ package com.kopf5.lernhilfe;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +13,7 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -28,17 +23,14 @@ import java.util.TimerTask;
 
 public class Lerntimer extends Fragment {
 
-    private static final String TAG = "Lerntimer";
-
-    TextView clock;
-    TextView level;
-    LernManager manager = new LernManager(this);
-    NumberPicker picker;
-    AlertDialog dialog;
-    Button newTimer;
-    Button clockPause;
-    Button clockResume;
-    public BottomNavigationView bottomNavigationView;
+    private TextView clock;
+    private TextView level;
+    private LernManager manager = new LernManager(this);
+    private NumberPicker picker,pausePicker;
+    private AlertDialog dialog;
+    private Button newTimer;
+    private Button clockPause;
+    private Button clockResume;
 
     public Lerntimer(){
         super(R.layout.activity_lerntimer);
@@ -49,11 +41,11 @@ public class Lerntimer extends Fragment {
                                 Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = inflater.inflate(R.layout.activity_lerntimer,container, false);
-        newTimer = (Button) view.findViewById(R.id.new_timer);
+        newTimer = view.findViewById(R.id.new_timer);
         newTimer.setOnClickListener(this::newTimer);
-        clockPause = (Button) view.findViewById(R.id.clock_pause);
+        clockPause = view.findViewById(R.id.clock_pause);
         clockPause.setOnClickListener(this::pauseTimer);
-        clockResume = (Button) view.findViewById(R.id.clock_resume);
+        clockResume =  view.findViewById(R.id.clock_resume);
         clockResume.setOnClickListener(this::resumeTimer);
         clock = view.findViewById(R.id.clock);
         level = view.findViewById(R.id.level);
@@ -64,22 +56,18 @@ public class Lerntimer extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        AlertDialog.Builder builder = new AlertDialog.Builder(view
-                .getContext());
-        builder.setTitle(R.string.dialog_title);
-        builder.setView(getLayoutInflater().inflate(R.layout.clock_dialog,null))
-                .setPositiveButton(R.string.start, (dialog, which) -> startTimer(null))
-                .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.cancel());
-        dialog = builder.create();
-//
+        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+        dialog = builder.setTitle(R.string.dialog_title)
+                .setView(getLayoutInflater().inflate(R.layout.clock_dialog,null))
+                .setPositiveButton(R.string.start, (dialog, which) -> startTimer())
+                .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.cancel())
+                .create();
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                level.setText(String.format("Level : %d", UserManager.manager.getLevel()));
+                level.setText(String.format(Locale.GERMANY,"Level : %d", UserManager.manager.getLevel()));
             }
         },0,100);
-
-
     }
 
     public void reset(){
@@ -88,21 +76,27 @@ public class Lerntimer extends Fragment {
     }
 
     public void newTimer(View view){
-
         dialog.show();
         if(picker==null) {
             picker = dialog.findViewById(R.id.clockPicker);
+            assert picker != null;
             picker.setMinValue(0);
-            picker.setMaxValue(60);
+            picker.setMaxValue(24);
+            picker.setFormatter(value -> String.valueOf(value*5));
+            pausePicker = dialog.findViewById(R.id.pausePicker);
+            assert pausePicker != null;
+            pausePicker.setMinValue(0);
+            pausePicker.setMaxValue(5);
         }
     }
 
-    public void updateTimerText(String timerText,float deltaTime){
+    public void updateTimerText(String timerText){
         clock.setText(timerText);
     }
 
-    public void startTimer(View view) {
-        manager.startTimer(picker.getValue()*60000);
+    public void startTimer() {
+
+        manager.startTimer(picker.getValue()*60000*5,pausePicker.getValue());
         dialog.hide();
         clockPause.setVisibility(View.VISIBLE);
     }
