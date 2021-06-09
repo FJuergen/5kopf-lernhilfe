@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ public class Lerntimer extends Fragment {
     private Button newTimer;
     private Button clockPause;
     private Button clockResume;
+    private static Context contextOfApplication;
 
     public Lerntimer(){
         super(R.layout.activity_lerntimer);
@@ -56,6 +58,7 @@ public class Lerntimer extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        contextOfApplication = getContext();
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         dialog = builder.setTitle(R.string.dialog_title)
                 .setView(getLayoutInflater().inflate(R.layout.clock_dialog,null))
@@ -113,5 +116,9 @@ public class Lerntimer extends Fragment {
         clockResume.setVisibility(View.INVISIBLE);
         clockPause.setVisibility(View.VISIBLE);
 
+    }
+
+    public static Context getContextOfApplication(){
+        return contextOfApplication;
     }
 }

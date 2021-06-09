@@ -34,6 +34,11 @@ public class AvatarSettings extends Fragment {
     ImageView img;
     ContextWrapper cw;
     SharedPreferences mySP;
+    ImageButton avatar2;
+    ImageButton avatar3;
+    ImageButton avatar4;
+    ImageButton avatar5;
+    ImageButton avatar6;
 
     public AvatarSettings() {
         super(R.layout.activity_avatar_settings);
@@ -148,17 +153,21 @@ public class AvatarSettings extends Fragment {
         img = view.findViewById(R.id.imageViewPreview);
         ImageButton avatar1 = view.findViewById(R.id.imageButtonSkin1);
         avatar1.setOnClickListener(this::setPreview);
-        ImageButton avatar2 = view.findViewById(R.id.imageButtonSkin2);
+        avatar2 = view.findViewById(R.id.imageButtonSkin2);
         avatar2.setOnClickListener(this::setPreview);
-        ImageButton avatar3 = view.findViewById(R.id.imageButtonSkin3);
+        avatar3 = view.findViewById(R.id.imageButtonSkin3);
         avatar3.setOnClickListener(this::setPreview);
-        ImageButton avatar4 = view.findViewById(R.id.imageButtonSkin4);
+        avatar4 = view.findViewById(R.id.imageButtonSkin4);
         avatar4.setOnClickListener(this::setPreview);
-        ImageButton avatar5 = view.findViewById(R.id.imageButtonSkin5);
+        avatar5 = view.findViewById(R.id.imageButtonSkin5);
         avatar5.setOnClickListener(this::setPreview);
-        ImageButton avatar6 = view.findViewById(R.id.imageButtonSkin6);
+        avatar6 = view.findViewById(R.id.imageButtonSkin6);
         avatar6.setOnClickListener(this::setPreview);
-
+        avatar2.setEnabled(false);
+        avatar3.setEnabled(false);
+        avatar4.setEnabled(false);
+        avatar5.setEnabled(false);
+        avatar6.setEnabled(false);
         return view;
     }
 
@@ -168,5 +177,14 @@ public class AvatarSettings extends Fragment {
         mySP = getActivity().getSharedPreferences("UserInfo",0);
         cw = new ContextWrapper(getActivity().getBaseContext());
         loadImageFromStorage(mySP.getString("selectedSkinPath",""));
+        //freischalten der Skins:
+        int level = mySP.getInt("level", 1);
+        switch(level){
+            case 50: avatar6.setEnabled(true);
+            case 40: avatar5.setEnabled(true);
+            case 30: avatar4.setEnabled(true);
+            case 20: avatar3.setEnabled(true);
+            case 10: avatar2.setEnabled(true);
+        }
     }
 }
