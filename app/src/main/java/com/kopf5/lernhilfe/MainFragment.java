@@ -49,8 +49,6 @@ public class MainFragment extends Fragment {
         return view;
     }
 
-
-
     /*
      * wird zur Activity navigiert, wird der Skin,Level und Progress (xp/levelThreshold) geladen.
      */
@@ -62,11 +60,10 @@ public class MainFragment extends Fragment {
         textViewLevel.setText("Level " + mySP.getInt("level",1));
         float xp = mySP.getFloat("xp",0);
         float levelThreshold = mySP.getFloat("levelThreshold", 100);
-        xpProgress.setText(xp + " XP / " + levelThreshold + " XP");
+        xpProgress.setText((int)xp + " XP / " + ((int)Math.ceil(levelThreshold)) + " XP");
         pBar.setProgress((int)((xp/levelThreshold)*100));
     }
-
-
+    
     /*
      * laedt Bild vom angegebenen Path
      * setzt Image auf Standard Skin, falls File nicht gefunden

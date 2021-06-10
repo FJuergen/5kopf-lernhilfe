@@ -13,7 +13,7 @@ public class UserManager {
     private final int maxLevel = 50;
 
     private UserManager(){
-        // lade Werte; setze Standardwertem, falls noch nie addXp(float xp) aufgerufen wurde
+        // lade Werte; setze Standardwerte, falls noch nie addXp(float xp) aufgerufen wurde
         readSharedPreferences();
     }
 
