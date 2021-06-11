@@ -4,34 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/toast_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/toast_background"
         android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imageViewLockedIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:src="@android:drawable/ic_lock_idle_lock" />
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:src="@drawable/outline_lock_white_24" />
 
         <TextView
             android:id="@+id/textViewToast"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_weight="5"
+            android:gravity="center|start"
             android:paddingEnd="10dp"
-            android:text="Du benötigt Level 00 für diesen Skin"
+            android:text="Du benötigst Level 00 für diesen Skin"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textIsSelectable="true"
+            android:textSize="20dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -208,22 +208,22 @@ public class AvatarSettings extends Fragment {
         mySP = getActivity().getSharedPreferences("UserInfo",0);
         cw = new ContextWrapper(getActivity().getBaseContext());
         loadImageFromStorage(mySP.getString("selectedSkinPath",""));
-        //freischalten der Skins:
+        //freischalten der Skins; ACHTUNG: geht nur bis level 50+9 (maxLevel)
         int level = mySP.getInt("level",1);
-        switch(level){
-            case 50:
+        switch(level/10){
+            case 5:
                 avatar6.setActivated(true);
                 avatar6.setAlpha(1.0f);
-            case 40:
+            case 4:
                 avatar5.setActivated(true);
                 avatar5.setAlpha(1.0f);
-            case 30:
+            case 3:
                 avatar4.setActivated(true);
                 avatar4.setAlpha(1.0f);
-            case 20:
+            case 2:
                 avatar3.setActivated(true);
                 avatar3.setAlpha(1.0f);
-            case 10:
+            case 1:
                 avatar2.setActivated(true);
                 avatar2.setAlpha(1.0f);
         }

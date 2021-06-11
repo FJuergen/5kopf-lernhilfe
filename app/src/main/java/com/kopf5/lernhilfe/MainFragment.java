@@ -57,11 +57,20 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mySP = getActivity().getSharedPreferences("UserInfo",0);
         loadImageFromStorage(mySP.getString("selectedSkinPath",""));
-        textViewLevel.setText("Level " + mySP.getInt("level",1));
+        int level = mySP.getInt("level",1);
+        textViewLevel.setText("Level " + level);
+
         float xp = mySP.getFloat("xp",0);
-        float levelThreshold = mySP.getFloat("levelThreshold", 100);
-        xpProgress.setText((int)xp + " XP / " + ((int)Math.ceil(levelThreshold)) + " XP");
-        pBar.setProgress((int)((xp/levelThreshold)*100));
+        if(level < 50){
+            float levelThreshold = mySP.getFloat("levelThreshold", 100);
+            xpProgress.setText((int)xp + " XP / " + ((int)Math.ceil(levelThreshold)) + " XP");
+            pBar.setProgress((int)((xp/levelThreshold)*100));
+        }
+        else {
+            //zeige nur die gesamt xp an und eine volle Progressbar an bei max. Level
+            xpProgress.setText((int)xp + " XP");
+            pBar.setProgress(100);
+        }
     }
     
     /*
