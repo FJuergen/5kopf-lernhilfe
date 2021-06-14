@@ -11,8 +11,10 @@
     <string name="home">Home</string>
     <string name="timer">Timer</string>
     <string name="skins">Skins</string>
-    <string name="lernzeit">Lernzeit:</string>
-    <string name="pause_count">Anzahl der Pausen:</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lernzeit">Anzahl der Lerneinheiten:</string>
+    <string name="pause_count">Länge der Pausen:</string>
+    <string name="phase_length">Länge der Lerneinheiten:</string>
+    //TODO auf info verlinken
+    <string name="info_box_info">Hier Stellst du ein wie lange deine Lereinheiten seien sollen. Generell wird empfohlen Lerneinheiten von etwa 25 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
+    <string name="info_box_info2">Hier Stellst du ein wie lange deine Pausen seien sollen. Generell wird empfohlen Pausen von etwa 5 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
 </resources>

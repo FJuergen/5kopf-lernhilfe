@@ -3,6 +3,8 @@ package com.kopf5.lernhilfe;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 /*
@@ -11,6 +13,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
  */
 public class MainActivity extends FragmentActivity {
 
+    public static SharedPreferences spf;
+
     public MainActivity(){
         super(R.layout.activity_main);
     }
@@ -18,6 +22,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        spf = this.getApplicationContext().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
         setContentView(R.layout.activity_main);
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
