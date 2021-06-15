@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +24,9 @@ public class MainFragment extends Fragment {
 
     private SharedPreferences mySP;
     private ImageView img;
+    private TextView textViewLevel;
+    private TextView xpProgress;
+    private ProgressBar pBar;
 
     public MainFragment() {
         super(R.layout.fragment_main);
@@ -38,22 +43,36 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         img = view.findViewById(R.id.imageView);
+        textViewLevel = view.findViewById(R.id.textViewLevel);
+        xpProgress = view.findViewById(R.id.xpProgress);
+        pBar = view.findViewById(R.id.progressBar);
         return view;
     }
 
-
-
     /*
-     * wird zur Activity navigiert, wird der Skin geladen.
+     * wird zur Activity navigiert, wird der Skin,Level und Progress (xp/levelThreshold) geladen.
      */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mySP = getActivity().getSharedPreferences("UserInfo",0);
         loadImageFromStorage(mySP.getString("selectedSkinPath",""));
+        int level = mySP.getInt("level",1);
+        textViewLevel.setText("Level " + level);
+
+        float xp = mySP.getFloat("xp",0);
+        if(level < 50){
+            float levelThreshold = mySP.getFloat("levelThreshold", 100);
+            xpProgress.setText((int)xp + " XP / " + ((int)Math.ceil(levelThreshold)) + " XP");
+            pBar.setProgress((int)((xp/levelThreshold)*100));
+        }
+        else {
+            //zeige nur die gesamt xp an und eine volle Progressbar an bei max. Level
+            xpProgress.setText((int)xp + " XP");
+            pBar.setProgress(100);
+        }
     }
-
-
+    
     /*
      * laedt Bild vom angegebenen Path
      * setzt Image auf Standard Skin, falls File nicht gefunden

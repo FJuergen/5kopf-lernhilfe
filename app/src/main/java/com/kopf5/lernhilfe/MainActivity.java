@@ -2,11 +2,7 @@ package com.kopf5.lernhilfe;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+
 import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 /*
@@ -39,14 +35,14 @@ public class MainActivity extends FragmentActivity {
                                     .replace(R.id.fragment_container,selectedFragment)
                                     .commit();
                             break;
-                        case R.id.navigation_happy:
+                        case R.id.navigation_home:
                             selectedFragment = new MainFragment();
                             getSupportFragmentManager().beginTransaction()
                                     .setReorderingAllowed(true)
                                     .replace(R.id.fragment_container,selectedFragment)
                                     .commit();
                             break;
-                        case R.id.navigation_shop:
+                        case R.id.navigation_info:
                             System.out.println("shop");
                             break;
                         case R.id.navigation_clothes:

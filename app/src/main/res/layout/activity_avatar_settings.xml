@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="20dp"
-    android:paddingTop="10dp"
-    android:paddingRight="20dp"
-    android:paddingBottom="20dp"
+    android:padding="20dp"
     tools:context=".AvatarSettings">
 
     <LinearLayout
@@ -39,9 +36,9 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@drawable/image_button_background"
                 android:scaleType="fitCenter"
-                android:src="@drawable/skin1"
-                />
+                android:src="@drawable/skin1" />
 
             <ImageButton
                 android:id="@+id/imageButtonSkin2"
@@ -49,9 +46,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:alpha=".6"
+                android:background="@drawable/image_button_background"
                 android:scaleType="fitCenter"
-                android:src="@drawable/skin2"
-                />
+                android:src="@drawable/skin2" />
         </LinearLayout>
 
         <LinearLayout
@@ -66,6 +64,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:alpha=".6"
+                android:background="@drawable/image_button_background"
                 android:scaleType="fitCenter"
                 android:src="@drawable/skin3" />
 
@@ -75,8 +75,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:alpha=".6"
+                android:background="@drawable/image_button_background"
                 android:scaleType="fitCenter"
-                android:src="@drawable/skin4"/>
+                android:src="@drawable/skin4" />
         </LinearLayout>
 
         <LinearLayout
@@ -91,6 +93,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:alpha=".6"
+                android:background="@drawable/image_button_background"
                 android:scaleType="fitCenter"
                 android:src="@drawable/skin5" />
 
@@ -100,6 +104,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:alpha=".6"
+                android:background="@drawable/image_button_background"
                 android:scaleType="fitCenter"
                 android:src="@drawable/skin6" />
         </LinearLayout>

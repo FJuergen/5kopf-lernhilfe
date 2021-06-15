@@ -13,11 +13,14 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,6 +37,9 @@ public class AvatarSettings extends Fragment {
     ImageView img;
     ContextWrapper cw;
     SharedPreferences mySP;
+    private ImageButton avatar2,avatar3,avatar4,avatar5,avatar6;
+    private Toast toast;
+    private View customToast;
 
     public AvatarSettings() {
         super(R.layout.activity_avatar_settings);
@@ -49,12 +55,31 @@ public class AvatarSettings extends Fragment {
      * setzt die Priview auf das Drawable des Buttons
      */
     public void setPreview(View v){
-        System.out.println("test");
-        Drawable skin = ((ImageButton)v).getDrawable();
-        if(skin!=null) {
-            img.setImageDrawable(skin);
-            saveDrawable(skin);
+        ImageButton imgB = (ImageButton)v;
+        if(v.isActivated()) {
+            Drawable skin = imgB.getDrawable();
+            if (skin != null) {
+                img.setImageDrawable(skin);
+                saveDrawable(skin);
+            }
         }
+        else {
+            ((TextView)customToast.findViewById(R.id.textViewToast)).setText("Du benötigst Level "+ getRequiredSkinLevel(imgB) + " für diesen Skin");
+            toast.show();
+        }
+    }
+
+    private int getRequiredSkinLevel(ImageButton b){
+        int requiredLv;
+        switch(b.getId()){
+            case R.id.imageButtonSkin2: requiredLv = 10;break;
+            case R.id.imageButtonSkin3: requiredLv = 20;break;
+            case R.id.imageButtonSkin4: requiredLv = 30;break;
+            case R.id.imageButtonSkin5: requiredLv = 40;break;
+            case R.id.imageButtonSkin6: requiredLv = 50;break;
+            default: requiredLv = 1;
+        }
+        return requiredLv;
     }
 
     /*
@@ -70,7 +95,6 @@ public class AvatarSettings extends Fragment {
         editor.putString("selectedSkinPath", path);
         editor.commit();
     }
-
 
     // Wandelt ein Drawable-Object in ein Bitmap-Object um
     public static Bitmap drawableToBitmap(Drawable drawable) {
@@ -145,19 +169,35 @@ public class AvatarSettings extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_avatar_settings, container, false);
+
         img = view.findViewById(R.id.imageViewPreview);
         ImageButton avatar1 = view.findViewById(R.id.imageButtonSkin1);
         avatar1.setOnClickListener(this::setPreview);
-        ImageButton avatar2 = view.findViewById(R.id.imageButtonSkin2);
+        avatar2 = view.findViewById(R.id.imageButtonSkin2);
         avatar2.setOnClickListener(this::setPreview);
-        ImageButton avatar3 = view.findViewById(R.id.imageButtonSkin3);
+        avatar3 = view.findViewById(R.id.imageButtonSkin3);
         avatar3.setOnClickListener(this::setPreview);
-        ImageButton avatar4 = view.findViewById(R.id.imageButtonSkin4);
+        avatar4 = view.findViewById(R.id.imageButtonSkin4);
         avatar4.setOnClickListener(this::setPreview);
-        ImageButton avatar5 = view.findViewById(R.id.imageButtonSkin5);
+        avatar5 = view.findViewById(R.id.imageButtonSkin5);
         avatar5.setOnClickListener(this::setPreview);
-        ImageButton avatar6 = view.findViewById(R.id.imageButtonSkin6);
+        avatar6 = view.findViewById(R.id.imageButtonSkin6);
         avatar6.setOnClickListener(this::setPreview);
+
+        //Buttons auf disable setzen für das Freischalten
+        avatar1.setActivated(true);
+        avatar2.setActivated(false);
+        avatar3.setActivated(false);
+        avatar4.setActivated(false);
+        avatar5.setActivated(false);
+        avatar6.setActivated(false);
+
+        //custom toast message anlegen für nicht freigeschaltete Skins
+        customToast = inflater.inflate(R.layout.custom_toast,(ViewGroup)view.findViewById(R.id.toast_layout));
+        toast = new Toast(getActivity().getApplicationContext());
+        toast.setGravity(Gravity.CENTER_VERTICAL,0,0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(customToast);
 
         return view;
     }
@@ -168,5 +208,24 @@ public class AvatarSettings extends Fragment {
         mySP = getActivity().getSharedPreferences("UserInfo",0);
         cw = new ContextWrapper(getActivity().getBaseContext());
         loadImageFromStorage(mySP.getString("selectedSkinPath",""));
+        //freischalten der Skins; ACHTUNG: geht nur bis level 50+9 (maxLevel)
+        int level = mySP.getInt("level",1);
+        switch(level/10){
+            case 5:
+                avatar6.setActivated(true);
+                avatar6.setAlpha(1.0f);
+            case 4:
+                avatar5.setActivated(true);
+                avatar5.setAlpha(1.0f);
+            case 3:
+                avatar4.setActivated(true);
+                avatar4.setAlpha(1.0f);
+            case 2:
+                avatar3.setActivated(true);
+                avatar3.setAlpha(1.0f);
+            case 1:
+                avatar2.setActivated(true);
+                avatar2.setAlpha(1.0f);
+        }
     }
 }

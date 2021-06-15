@@ -7,10 +7,10 @@
     <string name="resume">Resume</string>
     <string name="dialog_title">Set timer</string>
     <string name="new_timer">New Timer</string>
-    <string name="shop">shop</string>
-    <string name="happy">happy</string>
-    <string name="timer">timer</string>
-    <string name="clothes">clothes</string>
+    <string name="info">Info</string>
+    <string name="home">Home</string>
+    <string name="timer">Timer</string>
+    <string name="skins">Skins</string>
     <string name="lernzeit">Lernzeit:</string>
     <string name="pause_count">Anzahl der Pausen:</string>
     <!-- TODO: Remove or change this placeholder text -->
