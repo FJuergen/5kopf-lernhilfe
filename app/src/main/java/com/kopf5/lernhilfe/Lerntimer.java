@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -52,7 +53,7 @@ public class Lerntimer extends Fragment {
         clockPause.setOnClickListener(this::pauseTimer);
         clockResume =  view.findViewById(R.id.clock_resume);
         clockResume.setOnClickListener(this::resumeTimer);
-        Button timerInfo = view.findViewById(R.id.timerInfo);
+        ImageButton timerInfo = view.findViewById(R.id.timerInfo);
         timerInfo.setOnClickListener(this::timerInfo);
         clock = view.findViewById(R.id.clock);
         level = view.findViewById(R.id.level);
