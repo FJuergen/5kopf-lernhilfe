@@ -17,18 +17,6 @@ public class UserManager {
         readSharedPreferences();
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public float getXp() {
-        return xp;
-    }
-
-    public float getLevelThreshold() { return levelThreshold; }
-
-    public long getBrainPoints() { return brainPoints; }
-
     public void addXp(float xp) {
         SharedPreferences mySP = Lerntimer.getContextOfApplication().getSharedPreferences("UserInfo",0);
         SharedPreferences.Editor editor = mySP.edit();
@@ -47,7 +35,7 @@ public class UserManager {
         }
         editor.putFloat("xp",xp);
         editor.putLong("brainpoints",brainPoints);
-        editor.commit();
+        editor.apply();
     }
 
     //beim starten werden xp,level,levelThreshold und brainpoints geladen

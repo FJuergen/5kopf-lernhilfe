@@ -6,14 +6,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Lerntimer">
 
+    <ImageButton
+        android:layout_margin="10dp"
+        android:id="@+id/timerInfo"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_outline_settings_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/new_timer"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:text="@string/new_timer"
+        app:layout_constraintBottom_toTopOf="@+id/clock"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/clock_pause"
@@ -45,7 +56,7 @@
         android:id="@+id/clock"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/start"
+        android:text=""
         android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,11 +65,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:layout_margin="10dp"
         android:id="@+id/level"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="@string/level"
-        android:textAlignment="center"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
