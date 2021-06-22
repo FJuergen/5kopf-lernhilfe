@@ -27,13 +27,13 @@ public class UserManager {
         //level-up
         if(this.xp > levelThreshold && this.level <= maxLevel){
             level++;
-            this.xp=xp-levelThreshold;
+            this.xp=this.xp-levelThreshold;
             //neues level betraegt altes levelThreshold * 1.2
             levelThreshold*=1.2;
             editor.putInt("level",level);
             editor.putFloat("levelThreshold",levelThreshold);
         }
-        editor.putFloat("xp",xp);
+        editor.putFloat("xp",this.xp);
         editor.putLong("brainpoints",brainPoints);
         editor.apply();
     }
