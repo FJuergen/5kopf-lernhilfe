@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".infoFragment" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="Impressum"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginTop="10dp"
+        tools:text="Impressum" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginRight="10dp"
+            android:isScrollContainer="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Partnerprojekte"
+                android:textAlignment="center"
+                android:textSize="23dp"
+                tools:text="Partnerprojekte" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Im Zuge der Veranstaltung Projektmanagement in der Software-Entwicklung haben wir uns mit anderen Teams zusammengeschlossen und zeigen euch hier ihre Projekte"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                tools:text="Im Zuge der Veranstaltung Projektmanagement in der Software-Entwicklung haben wir uns mit anderen Teams zusammengeschlossen und zeigen euch hier ihre Projekte " />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:text="Zockbrücken Discord Server"
+                android:textAlignment="center"
+                android:textSize="19dp"
+                tools:text="Zockbrücken Discord Server" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="@string/zockbr"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                tools:text="Der Discord Server von Zockbrücken, dem eSport Projekt der Hochschule Kaiserslautern am Standort Zweibrücken https://discord.gg/YHwVE8U2a9 " />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="Die Maschine (Campusfeeling)"
+                android:textAlignment="center"
+                android:textSize="19dp"
+                tools:text="Die Maschine (Campusfeeling)" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="@string/maschine"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                tools:text="" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="DaltaJ (Lernhilfen)"
+                android:textAlignment="center"
+                android:textSize="19dp"
+                tools:text="DaltaJ (Lernhilfen)" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="@string/dalta"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                tools:text=" " />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Disclaimer"
+                android:textAlignment="center"
+                android:textSize="23dp"
+                tools:text="Disclaimer" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/disclaimer"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                tools:text=" " />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Verweise"
+                android:textAlignment="center"
+                android:textSize="23dp"
+                tools:text="Verweise" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:text="@string/iconsV"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                tools:text=" " />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

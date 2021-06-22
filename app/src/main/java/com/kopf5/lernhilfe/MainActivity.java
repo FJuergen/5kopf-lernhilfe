@@ -48,7 +48,11 @@ public class MainActivity extends FragmentActivity {
                                     .commit();
                             break;
                         case R.id.navigation_info:
-                            System.out.println("shop");
+                            selectedFragment = new infoFragment();
+                            getSupportFragmentManager().beginTransaction()
+                                    .setReorderingAllowed(true)
+                                    .replace(R.id.fragment_container,selectedFragment)
+                                    .commit();
                             break;
                         case R.id.navigation_clothes:
                             selectedFragment = new AvatarSettings();
