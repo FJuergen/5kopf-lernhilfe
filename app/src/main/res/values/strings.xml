@@ -15,6 +15,6 @@
     <string name="pause_count">Länge der Pausen:</string>
     <string name="phase_length">Länge der Lerneinheiten:</string>
     //TODO auf info verlinken
-    <string name="info_box_info">Hier Stellst du ein wie lange deine Lereinheiten seien sollen. Generell wird empfohlen Lerneinheiten von etwa 25 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
-    <string name="info_box_info2">Hier Stellst du ein wie lange deine Pausen seien sollen. Generell wird empfohlen Pausen von etwa 5 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
+    <string name="info_box_info">Hier Stellst du ein wie lange deine Lereinheiten seien sollen. Generell wird empfohlen Lerneinheiten von etwa 25 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: https://campusfeeling.online/t/distanzlernen-verbessern-lernmethoden/94</string>
+    <string name="info_box_info2">Hier Stellst du ein wie lange deine Pausen seien sollen. Generell wird empfohlen Pausen von etwa 5 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: https://campusfeeling.online/t/distanzlernen-verbessern-lernmethoden/94</string>
 </resources>
