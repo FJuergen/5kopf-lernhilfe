@@ -10,5 +10,5 @@ Installation:
 - .apk datei ausführen und Genehmigung erteilen apps zu installieren
 
 Disclaimer:
-- Wir haften nicht für Schäden, welche durch die Installation,
+- Wir haften nicht für Schäden und Folgeschäden, welche durch die Installation,
   oder das Ausführen der App auftreten können.
