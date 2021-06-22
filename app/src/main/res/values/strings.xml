@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">lernhilfe</string>
+    <string name="app_name">Big Brain Timer</string>
     <string name="cancel">Cancel</string>
     <string name="start">Start</string>
     <string name="level">Level : 0</string>
@@ -17,4 +17,12 @@
     //TODO auf info verlinken
     <string name="info_box_info">Hier Stellst du ein wie lange deine Lereinheiten seien sollen. Generell wird empfohlen Lerneinheiten von etwa 25 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
     <string name="info_box_info2">Hier Stellst du ein wie lange deine Pausen seien sollen. Generell wird empfohlen Pausen von etwa 5 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="zockbr">Der Discord Server von Zockbrücken, dem eSport Projekt der Hochschule Kaiserslautern am Standort Zweibrücken \nhttps://discord.gg/YHwVE8U2a9</string>
+    <string name="maschine">Das Team die Maschine stellt eine Website für die Studierenden der Hochschule Kaiserslautern bereit, auf der sie sich über Hobbies und Interessen austauschen können um das Campusfeeling-Forum abzubilden. \nhttps://campusfeeling.online/login</string>
+    <string name="dalta">DaltaJ hat ein paar gute Hilfestellungen parat falls es ums Lernen geht. Schaut hier mal vorbei und stöbert durch Ihren Guide zur Promodore-Technik.\nPS Ihr braucht einen Account bei Campusfeeling(die Maschine) \nhttps://campusfeeling.online/c/guides/15</string>
+    <string name="disclaimer">Wir haften nicht für Schäden und Folgeschäden, welche durch die Installation, oder das Ausführen der App auftreten können.\n \n
+Auf die Inhalte externer Links haben wir keinen Einfluss. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend, in Form einer neuen Version entfernen.</string>
+    <string name="iconsV">Diese App verwendet die Material Icons von Google. \nhttps://fonts.google.com/icons</string>
 </resources>
