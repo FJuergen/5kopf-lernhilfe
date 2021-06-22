@@ -14,10 +14,6 @@
     <string name="lernzeit">Anzahl der Lerneinheiten:</string>
     <string name="pause_count">Länge der Pausen:</string>
     <string name="phase_length">Länge der Lerneinheiten:</string>
-    //TODO auf info verlinken
-    <string name="info_box_info">Hier Stellst du ein wie lange deine Lereinheiten seien sollen. Generell wird empfohlen Lerneinheiten von etwa 25 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
-    <string name="info_box_info2">Hier Stellst du ein wie lange deine Pausen seien sollen. Generell wird empfohlen Pausen von etwa 5 min zu haben. Mehr Informationen findest du aber auch unten im info-tab. oder hier: </string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="zockbr">Der Discord Server von Zockbrücken, dem eSport Projekt der Hochschule Kaiserslautern am Standort Zweibrücken \nhttps://discord.gg/YHwVE8U2a9</string>
     <string name="maschine">Das Team die Maschine stellt eine Website für die Studierenden der Hochschule Kaiserslautern bereit, auf der sie sich über Hobbies und Interessen austauschen können um das Campusfeeling-Forum abzubilden. \nhttps://campusfeeling.online/login</string>
