@@ -1,6 +1,6 @@
 # Big Brain Timer
 
-Diese App Hilft durch Gamification beim einteilen und einhalten von Lerneinheiten.
+Diese App hilft durch Gamification beim Einteilen und Einhalten von Lerneinheiten.
 Benötigt android 4.4 Kitkat
 
 
