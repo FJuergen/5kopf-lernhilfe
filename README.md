@@ -6,7 +6,7 @@ Benötigt Android 4.4 Kitkat
 
 Installation:
 
-- aktuellste [apk](https://github.com/FJuergen/5kopf-lernhilfe/releases) herunterladen 
+- aktuellste [apk](https://github.com/FJuergen/5kopf-lernhilfe/releases/latest) herunterladen 
 - .apk Datei ausführen und Genehmigung erteilen Apps zu installieren
 
 Disclaimer:
