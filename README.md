@@ -1,13 +1,13 @@
 # Big Brain Timer
 
-Diese App hilft durch Gamification beim einteilen und einhalten von Lerneinheiten.
-Benötigt android 4.4 Kitkat
+Diese App hilft durch Gamification beim Einteilen und Einhalten von Lerneinheiten.
+Benötigt Android 4.4 Kitkat
 
 
 Installation:
 
 - aktuellste [apk](https://github.com/FJuergen/5kopf-lernhilfe/releases) herunterladen 
-- .apk datei ausführen und Genehmigung erteilen apps zu installieren
+- .apk Datei ausführen und Genehmigung erteilen Apps zu installieren
 
 Disclaimer:
 - Wir haften nicht für Schäden und Folgeschäden, welche durch die Installation,
