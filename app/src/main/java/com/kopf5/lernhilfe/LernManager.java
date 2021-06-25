@@ -20,6 +20,7 @@ public class LernManager {
     CountDownTimer pauseTimer = null;
     public IsRunning isRunning = STOPPED;
     SharedPreferences spf = MainActivity.spf;
+    int numOfSegment;
     long pausedTimerTime = 0;
     long xpCounter;
     long remainingPauses;
@@ -58,6 +59,7 @@ public class LernManager {
             segmentLength = spf.getInt("phase_length", 1500000);
         }
         xpCounter = 0;
+        numOfSegment = 1;
         startTimer();
     }
 
@@ -66,7 +68,7 @@ public class LernManager {
         timer = new CountDownTimer(segmentLength, 100) {
             @Override
             public void onTick(long millisUntilFinished) {
-                parent.updateTimerText("Lernphase:\n" + millisUntilFinished / 60000 + " : " + String.format(Locale.GERMANY, "%02d", (millisUntilFinished / 1000) % 60));
+                parent.updateTimerText("Lernphase "+ numOfSegment +":",(millisUntilFinished < 600000? "0":"") + millisUntilFinished / 60000 + ":" + String.format(Locale.GERMANY, "%02d", (millisUntilFinished / 1000) % 60));
                 pausedTimerTime = millisUntilFinished;
                 xpCounter += 100;
                 if (xpCounter > 60000) {
@@ -80,13 +82,14 @@ public class LernManager {
                     pauseTimer = new CountDownTimer(pauseLength, 100) {
                         @Override
                         public void onTick(long millisUntilFinished) {
-                            parent.updateTimerText("Pause:\n" + millisUntilFinished / 60000 + " : " + String.format(Locale.GERMANY, "%02d", (millisUntilFinished / 1000) % 60));
+                            parent.updateTimerText("Pause "+ numOfSegment + ":",(millisUntilFinished < 600000? "0":"") + millisUntilFinished / 60000 + ":" + String.format(Locale.GERMANY, "%02d", (millisUntilFinished / 1000) % 60));
                             pausedTimerTime = millisUntilFinished;
                         }
 
                         @Override
                         public void onFinish() {
                             remainingPauses--;
+                            numOfSegment++;
                             startTimer();
                         }
                     }.start();
