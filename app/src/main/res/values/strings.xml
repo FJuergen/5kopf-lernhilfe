@@ -23,4 +23,10 @@ Auf die Inhalte externer Links haben wir keinen Einfluss. Die verlinkten Seiten 
     <string name="iconsV">Diese App verwendet die Material Icons von Google. \nhttps://fonts.google.com/icons</string>
     <string name="info_box_info">Hier Stellst du ein, wie lange deine Lehnreinheiten sein sollen. Generell wird empfohlen Lerneinheiten von etwa 25 min zu haben. Mehr Informationen zu den Lernmethoden oder zu der Promodore-Technik findest du hier: https://campusfeeling.online/t/distanzlernen-verbessern-lernmethoden/94</string>
     <string name="info_box_info2">Hier Stellst du ein, wie lange deine Pausen sein sollen. Generell wird empfohlen Pausen von etwa 5 min zu haben. Mehr Informationen findest du hier: https://campusfeeling.online/t/distanzlernen-verbessern-lernmethoden/94</string>
+    <string name="welcome">Willkommen zum Big Brain Timer\n\nIn dieser App kannst du dir einen Lerntimer stellen und dabei auch noch coole Skins freischalten, mit denen du deinen Avatar verändern kannst.\n\nSammel sie alle!</string>
+    <string name="homeWelcome">Auf dem Homescreen siehst du deinen aktuellen Levelfortschritt und deinen eigenen Avatar.</string>
+    <string name="timerWelcome">Hier stellst du den Timer. Du kannst bestimmen, wie lange deine Lernphasen und Pausen sind und wie viele Lernphasen du absolvieren möchtest.</string>
+    <string name="garderobeWelcome">In der Garderobe findest du deine freigeschalteten Skins. Alle 10 Level schaltest du einen neuen Skin frei.</string>
+    <string name="infoWelcome">Hier findest du unser Impressum, in dem wir auf vorallem auf interessante Partnerprojekte verweisen.</string>
+    <string name="navInfo">Du kannst zu folgenden Screens navigieren:</string>
 </resources>

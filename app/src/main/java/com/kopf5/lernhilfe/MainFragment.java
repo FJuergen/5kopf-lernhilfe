@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ public class MainFragment extends Fragment {
     private TextView textViewLevel;
     private TextView xpProgress;
     private ProgressBar pBar;
+    private AlertDialog dialog;
 
     public MainFragment() {
         super(R.layout.fragment_main);
@@ -70,6 +72,18 @@ public class MainFragment extends Fragment {
             //zeige nur die gesamt xp an und eine volle Progressbar an bei max. Level
             xpProgress.setText((int)xp + " XP");
             pBar.setProgress(100);
+        }
+
+        //welcome alert erschein beim ersten Öffnen der App
+        boolean appOpenedBefore = mySP.getBoolean("appOpenedBefore",false);
+        if(appOpenedBefore == false){
+            AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+            dialog = builder
+                    .setView(getLayoutInflater().inflate(R.layout.info_dialog_welcome,null))
+                    .setNegativeButton("ok", (dialog, which) -> dialog.cancel())
+                    .create();
+            mySP.edit().putBoolean("appOpenedBefore",true).apply();
+            dialog.show();
         }
     }
     
