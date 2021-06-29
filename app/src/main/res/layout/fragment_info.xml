@@ -20,8 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp">
+        android:layout_marginTop="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,10 +46,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Im Zuge der Veranstaltung Projektmanagement in der Software-Entwicklung haben wir uns mit anderen Teams zusammengeschlossen und zeigen euch hier ihre Projekte"
+                android:text="@string/partnerprojekte"
                 android:textAlignment="center"
-                android:textSize="12dp"
-                tools:text="Im Zuge der Veranstaltung Projektmanagement in der Software-Entwicklung haben wir uns mit anderen Teams zusammengeschlossen und zeigen euch hier ihre Projekte " />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -158,6 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:autoLink="all"
                 android:linksClickable="true"
                 android:text="@string/iconsV"

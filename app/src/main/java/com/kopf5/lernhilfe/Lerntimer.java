@@ -29,6 +29,7 @@ public class Lerntimer extends Fragment {
 
     private TextView clock;
     private TextView level;
+    private TextView phase;
     private final LernManager manager = LernManager.manager;
     private NumberPicker picker;
     private AlertDialog dialog,infoDialog,infoDialog2;
@@ -57,6 +58,7 @@ public class Lerntimer extends Fragment {
         timerInfo.setOnClickListener(this::timerInfo);
         clock = view.findViewById(R.id.clock);
         level = view.findViewById(R.id.level);
+        phase = view.findViewById(R.id.Phase);
         manager.parent = this;
 
         return view;
@@ -128,6 +130,7 @@ public class Lerntimer extends Fragment {
         clockPause.setVisibility(View.INVISIBLE);
         clockResume.setVisibility(View.INVISIBLE);
         clock.setText("");
+        phase.setText("");
     }
 
     public void newTimer(View view){
@@ -140,7 +143,8 @@ public class Lerntimer extends Fragment {
         }
     }
 
-    public void updateTimerText(String timerText){
+    public void updateTimerText(String phaseText,String timerText){
+        phase.setText(phaseText);
         clock.setText(timerText);
     }
 
