@@ -39,6 +39,9 @@ public class Lerntimer extends Fragment {
     private static Context contextOfApplication;
     SharedPreferences spf = MainActivity.spf;
 
+    Timer timer = new Timer();
+
+
     public Lerntimer(){
         super(R.layout.activity_lerntimer);
     }
@@ -64,6 +67,7 @@ public class Lerntimer extends Fragment {
         return view;
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -88,10 +92,15 @@ public class Lerntimer extends Fragment {
                 .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.cancel())
                 .create();
 
-        new Timer().scheduleAtFixedRate(new TimerTask() {
+        timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                level.setText(String.format(Locale.GERMANY,"Level : %d", spf.getInt("level",1)));
+                try {
+                    getActivity().runOnUiThread(() -> level.setText(String.format(Locale.GERMANY, "Level : %d", spf.getInt("level", 1))));
+                }catch (NullPointerException e) {
+                    e.printStackTrace();
+                    timer.cancel();
+                }
             }
         },0,100);
         if(LernManager.manager.isRunning==IsRunning.RUNNING){
@@ -100,7 +109,12 @@ public class Lerntimer extends Fragment {
         if(LernManager.manager.isRunning==IsRunning.PAUSED){
             clockResume.setVisibility(View.VISIBLE);
         }
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        timer.cancel();
     }
 
     private void timerInfo(View view){
